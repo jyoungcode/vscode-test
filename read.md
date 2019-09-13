@@ -1,5 +1,3 @@
-spread 연산자 원리 더 공부
-
 # vanilla-js miniproject
 
 [video](https://www.youtube.com/watch?v=90PgFUPIybY)
