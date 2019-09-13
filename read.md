@@ -2,7 +2,7 @@ spread 연산자 원리 더 공부
 
 # vanilla-js miniproject
 
-[](https://www.youtube.com/watch?v=90PgFUPIybY)
+[video](https://www.youtube.com/watch?v=90PgFUPIybY)
 
 # vscode setting 쉽게 적용
 
