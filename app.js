@@ -7,6 +7,17 @@
  * 5. 항상 Storage.getProduct()처럼 메서드 호출 먼저 만들고! 나서 해당 메서드 만든다.
  */
 
+// contentful API
+// npm install 안하고 CDN 써서 require('contentful') 안해도된다.
+const client = contentful.createClient({
+  // This is the "space ID". A space is like a project folder in Contentful terms
+  space: 'nn2siqyp4dw8',
+  // This is the "access token" for this space. Normally you get both ID and the token in the Contentful web app
+  accessToken: '7L-fzYqNSubKVDjDp9i6Tbx30rjY-SbJi8uPfGOtwZ8'
+});
+
+console.log('client', client);
+
 // variables
 
 const cartBtn = document.querySelector('.cart-btn');
@@ -31,11 +42,27 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
+      // https://contentful.github.io/contentful.js/contentful/7.9.1/ContentfulClientAPI.html#.getEntries
+      // https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/content-type/query-entries/console/js
+      let contentful = await client.getEntries({
+        // content Model 탭에서 우측에서 복사
+        content_type: 'comfyHouseProducts'
+      });
+      // .then(response => console.log(response.items))
+      // .catch(console.error);
+      console.log('contentful', contentful);
+
+      // local json
       let result = await fetch('products.json');
       let data = await result.json();
-      let products = data.items;
+      // let products = data.items;
+
       // return result;
       // return data;
+
+      // contentful API json 불러오기
+      let products = contentful.items;
+
       products = products.map(item => {
         const { title, price } = item.fields;
         const { id } = item.sys;
