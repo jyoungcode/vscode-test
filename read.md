@@ -12,6 +12,25 @@
 
 # Netlify, contentful API, Gatsby
 
-1. Netlify: static website deploy
+1. Netlify: static website deploy hosting
 2. contentfulAPI: CMD management DB
 3. Gatsby: static site generator
+
+## step
+
+1. vscode
+2. node.js
+3. git 설치
+4. git clone
+   https://rogerdudler.github.io/git-guide/index.ko.html
+5. git 설정
+   $ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+https://jbee.io/etc/intro-new-blog/
+
+https://busy.org/@anpigon/gatsby-google-adsense--1546242510227
+
+## Netilfy
+
+1. npm i -g netlify-cli
